@@ -1,0 +1,10 @@
+rules:
+  - id: dangerous-function
+    languages:
+      - python
+    message: "Dangerous function usage detected"
+    severity: WARNING
+    patterns:
+      - pattern-either:
+          - pattern: eval(...)
+          - pattern: exec(...)

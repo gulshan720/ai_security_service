@@ -1,0 +1,10 @@
+rules:
+  - id: sql-injection
+    languages:
+      - python
+    message: "Possible SQL injection"
+    severity: WARNING
+    patterns:
+      - pattern: $QUERY = $A + $INPUT
+      - pattern-inside: |
+          $QUERY = ...
